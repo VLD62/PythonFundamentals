@@ -1,6 +1,5 @@
 data_list = input().split(' = ')
 names_dict = {}
-
 while not data_list[0] == "end":
     if data_list[1].isdigit():
         key = data_list[0]
@@ -9,8 +8,6 @@ while not data_list[0] == "end":
     else:
         if data_list[1] in names_dict.keys():
             names_dict[data_list[0]] = names_dict[data_list[1]]
-
     data_list = input().split(' = ')
-
 for key, value in names_dict.items():
     print(f"{key} === {value}")
