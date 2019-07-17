@@ -1,47 +1,44 @@
-if __name__ == '__main__':
-    input_string = input()
-    city_dict = {}
-    city_capacity = {}
+def string_to_dict(s):
+    tmp = s.split(',')
+    return {i.split('-')[0]: int(i.split('-')[1]) for i in tmp}
 
-    while not input_string == 'ready':
-        city_list = input_string.split(":")
-        transport_list = city_list[1].split(",")
-        transport_array = []
-        transport_dict = {}
-        for transport in transport_list:
 
-            transport_list1 = transport.split("-")
-            transport_dict[transport_list1[0]] = transport_list1[1]
+def sum_it(s):
+    sum = 0
+    for vh, co in s.items():
+        sum += co
+    return int(sum)
 
-        if city_list[0] in city_dict.keys():
-            for k,v in city_dict.items():
-                for single_transport in v:
-                    for key,value in single_transport.items():
-                            for keyt, valuet in transport_dict.items():
-                                if key == keyt:
-                                    single_transport[key] = valuet
-            city_dict[city_list[0]] += transport_array
+
+city_vhk_d = {}
+while True:
+    inp = input().split(':')
+    if inp[0] == "ready":
+        break
+    else:
+        if inp[0] not in city_vhk_d:
+            city_vhk_d[inp[0]] = string_to_dict(inp[1])
         else:
-            transport_array.append(transport_dict)
-            city_dict[city_list[0]] = transport_array
-        input_string = input()
+            city_vhk_d[inp[0]].update(string_to_dict(inp[1]))
 
-    input_string = input()
-    while not input_string == 'travel time!':
-        capacity_list = input_string.split(" ")
-        key = capacity_list[0:-1]
-        value = capacity_list[-1]
-        city_capacity[" ".join(key)] = int("".join(value))
-        input_string = input()
+# print(city_vhk_d)
 
-    for k_capacity, v_capacity in city_capacity.items():
-        for k_transport, v_transport in city_dict.items():
-            if k_capacity == k_transport:
-                transport_capacity = 0
-                for transport in v_transport:
-                       for k,v in transport.items():
-                           transport_capacity += int(v)
-                if int(v_capacity) <= transport_capacity :
-                    print(f'{k_capacity} -> all {v_capacity} accommodated')
-                else:
-                    print(f'{k_capacity} -> all except {v_capacity - transport_capacity} accommodated')
+city_capacity = {}
+while True:
+    inp = input().split()
+    if inp[0] == "travel" and inp[1] == "time!":
+        break
+    else:
+        city_name = ' '.join(inp[:-1])
+        city_cap = int(inp[-1:][0])
+        if inp[0] not in city_capacity.keys():
+            city_capacity[city_name] = city_cap
+        else:
+            city_capacity[city_name].update(city_cap)
+
+# print(city_capacity)
+for city, cap in city_capacity.items():
+    if cap <= sum_it(city_vhk_d[city]):
+        print(f'{city} -> all {cap} accommodated')
+    else:
+        print(f'{city} -> all except {abs(cap - sum_it(city_vhk_d[city]))} accommodated')
