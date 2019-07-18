@@ -1,0 +1,12 @@
+
+kpython:S116"ORename this field "Content" to match the regular expression ^[_a-z][_a-z0-9]*$.(¨´€ßøÿÿÿÿ
+kpython:S117"TRename this parameter "Username" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ‡²¼
+opython:S117
+"SRename this parameter "Content" to match the regular expression ^[_a-z][a-z0-9_]*$.(‘»þûýÿÿÿÿ
+npython:S117
+"RRename this parameter "Sender" to match the regular expression ^[_a-z][a-z0-9_]*$.(‘»þûýÿÿÿÿ
+mpython:S1542"PRename function "Max_num" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(Ô’Œãúÿÿÿÿ
+tpython:S116"XRename this field "ReceivedMessages" to match the regular expression ^[_a-z][_a-z0-9]*$.(œ±ªéøÿÿÿÿ
+lpython:S116"PRename this field "Username" to match the regular expression ^[_a-z][_a-z0-9]*$.(§Ûì­øÿÿÿÿ
+jpython:S116"NRename this field "Sender" to match the regular expression ^[_a-z][_a-z0-9]*$.(æºÇàÿÿÿÿÿ
+spython:S117"\Rename this parameter "ReceivedMessages" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ñ‡²¼

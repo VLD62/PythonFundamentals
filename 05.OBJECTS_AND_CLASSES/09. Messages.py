@@ -11,42 +11,42 @@ class Message:
         self.Content  = Content
         self.Sender  =  Sender
 
+
 def Max_num(a,b):
     if a > b:
         return a
     else:
         return b
 
+
 if __name__ == '__main__':
 
         input_string = input().split(' ')
-        users_list = []
+        users_list = {}
         message_list_1 = []
         message_list_2 = []
 
         while not input_string[0] == 'exit':
             if input_string[0] == 'register':
-                newUser = User(input_string[1],[])
-                users_list.append(newUser)
+                newUser = User(input_string[1], [])
+                users_list[input_string[1]] = newUser
             else:
-                for user in users_list:
+                for key, user in users_list.items():
                     if user.Username == input_string[2]:
-                        newMessage = Message(input_string[3],input_string[0])
+                        newMessage = Message(input_string[3], input_string[0])
                         user.ReceivedMessages.append(newMessage)
 
             input_string = input().split(' ')
 
         final_usernames = input().split(' ')
 
-
-        for user in users_list:
+        for key,user in users_list.items():
             if user.Username == final_usernames[1]:
                 for messages in user.ReceivedMessages:
                     if messages.Sender == final_usernames[0]:
                         message_list_1.append(f'{messages.Sender}: {messages.Content}')
 
-
-        for user in users_list:
+        for key,user in users_list.items():
             if user.Username == final_usernames[0]:
                 for messages in user.ReceivedMessages:
                     if messages.Sender == final_usernames[1]:
@@ -56,7 +56,6 @@ if __name__ == '__main__':
             for i in range(0,Max_num(len(message_list_1),len(message_list_2))):
                 if i < len(message_list_1):
                     print(message_list_1[i])
-    
                 if i < len(message_list_2):
                     print(message_list_2[i])
         else:
