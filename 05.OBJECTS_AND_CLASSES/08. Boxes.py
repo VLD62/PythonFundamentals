@@ -7,7 +7,8 @@ class Point:
         self.x = int(x)
         self.y = int(y)
 
-    def Calc_Distance(self, p1, p2):
+    @staticmethod
+    def Calc_Distance(p1, p2):
         a = abs(p1.x - p2.x)
         b = abs(p1.y - p2.y)
         return round(math.sqrt(a*a + b*b), 3)
@@ -20,14 +21,26 @@ class Box:
         self.UpperRight = y
         self.BottomLeft = z
         self.BottomRight = v
-        self.Width = round(Point.Calc_Distance(self, x, y))
-        self.Height = round(Point.Calc_Distance(self, x, z))
+        self.Width = round(Point.Calc_Distance(x, y))
+        self.Height = round(Point.Calc_Distance(x, z))
+
+    #TODO
+    def Get_Width():
+        pass
+    #TODO
+    def Get_Height():
+        pass
+    
 
     def CalculatePerimeter(self, Width, Height):
         return (2 * Width) + (2 * Height)
 
     def CalculateArea(self, Width, Height):
         return (Width * Height)
+    #TODO
+    def show_info(self,Width,Height,CalculatePerimeter):
+        pass
+        #return f'Box: {self.Width}, {self.Height}\nPerimeter: {self.CalculatePerimeter(self.Width,self.Height)}\nArea: {self.CalculateArea(self.Width,self.Height)}'
 
 
 if __name__ == '__main__':
@@ -48,7 +61,9 @@ if __name__ == '__main__':
         input_string = input()
 
     for box in boxes:
-
         print(f'Box: {box.Width}, {box.Height}')
         print(f'Perimeter: {box.CalculatePerimeter(box.Width,box.Height)}')
         print(f'Area: {box.CalculateArea(box.Width,box.Height)}')
+
+        #TODO
+        #print(box.show_info)
