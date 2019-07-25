@@ -1,0 +1,3 @@
+Remove duplicated elements, keeps order of the array:
+
+filtered_colors = sorted(set(colors), key=lambda x: colors.index(x))
