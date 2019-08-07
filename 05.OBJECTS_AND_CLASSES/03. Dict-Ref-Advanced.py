@@ -20,7 +20,7 @@ if __name__ == '__main__':
             if input_list[1] in [existing_person.name for existing_person in person_list]:
                 for existing_person in person_list:
                     if existing_person.name == input_list[1]:
-                        new_person=Person(name=input_list[0],values=existing_person.values)
+                        new_person=Person(name=input_list[0],values=existing_person.values.copy())
                         person_list.append(new_person)
 
 

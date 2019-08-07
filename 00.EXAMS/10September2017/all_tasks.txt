@@ -1,0 +1,9 @@
+Python Fundamentals Exam - 10 September 2017
+
+01. Sprint - https://gist.github.com/Alex-Tsvetanov/81bc776e0ad4154324d7332ffebeed02
+
+02. Dimitri the cryptographer  - https://gist.github.com/Ro6afF/2c89e910cd5be0f435b15fcb381da31b
+
+03. PC - https://gist.github.com/Ro6afF/2b56dc349d44ebcc24d078a35b4497e3
+
+04. Pesho's secret conversation - https://gist.github.com/Alex-Tsvetanov/5502a50d7a5642148b13406d5064b86c

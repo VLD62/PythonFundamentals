@@ -1,3 +1,28 @@
 Remove duplicated elements, keeps order of the array:
 
 filtered_colors = sorted(set(colors), key=lambda x: colors.index(x))
+
+Sort list of objects:
+
+new_list = sorted(list_of_RealNumber,key=lambda x: float(x.value))
+
+by 2 keys:
+
+boxes.sort(key=lambda x: (x.fruit_val, - x.weigth))
+
+by 2 keys asc desc:
+
+apartment_list_sorted = sorted(apartment_list,key=lambda x: (float(x.price), -float(x.square_meters)))
+
+taken_apartments = sorted(sorted(taken_apartments, key=lambda xa: xa.square_meters, reverse=True), key=lambda xa: xa.price)
+
+items.sort(key = lambda obj: (obj.firstname, [(-ord(c) for c in obj.lastname)]))
+
+
+apartment_list.sort(key = lambda obj: (obj.price, [(-ord(c) for c in obj.square_meters)]))
+
+
+apartment_list.sort(key = lambda obj: (obj.firstname, [(-ord(c) for c in obj.lastname)]))
+
+
+boxes.sort(key=lambda x: (x.fruit_val, - x.weigth))
