@@ -1,4 +1,40 @@
 r'LISTS:'
+'Get index of max element'
+def max_element_index(array):
+    even_odd_index = {'even': 0, 'odd': 0}
+    try:
+        max_element_even = max([el for el in array if el % 2 == 0])
+        even_odd_index['even'] = max(
+            [idx for idx, el in enumerate(array) if el == max_element_even])
+    except:
+        even_odd_index['even'] = 'q'
+
+    try:
+        max_element_odd = max([el for el in array if el % 2 == 1])
+        even_odd_index['odd'] = max(
+            [idx for idx, el in enumerate(array) if el == max_element_odd])
+    except:
+        even_odd_index['odd'] = 'q'
+
+    return even_odd_index
+
+'Get index of min element'
+def min_element_index(array):
+    even_odd_index = {'even': 0, 'odd': 0}
+    try:
+        min_element_even = min([el for el in array if el % 2 == 0])
+        even_odd_index['even'] = max(
+            [idx for idx, el in enumerate(array) if el == min_element_even])
+    except:
+        even_odd_index['even'] = 'q'
+    try:
+        min_element_odd = min([el for el in array if el % 2 == 1])
+        even_odd_index['odd'] = max(
+            [idx for idx, el in enumerate(array) if el == min_element_odd])
+    except:
+        even_odd_index['odd'] = 'q'
+    return even_odd_index
+
 'Remove duplicated elements, keeps order of the array:'
     filtered_colors = sorted(set(colors), key=lambda x: colors.index(x))
 
