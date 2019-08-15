@@ -1,0 +1,7 @@
+import datetime
+d=datetime.datetime.strptime('12:30:00', '%H:%M:%S').toordinal()
+
+days = 8589934588000000 // 86400
+
+total_d = d + days
+print(datetime.datetime.fromordinal(total_d))
