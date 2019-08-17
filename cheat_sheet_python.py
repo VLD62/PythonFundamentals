@@ -57,6 +57,8 @@ def min_element_index(array):
     sorted_players = sorted(players,key=lambda x: (-x.score, x.name), reverse=True)
 
 
+lambda k,v: "%s:%s".format(k, v)
+
 'uniq array keep order:'
 def uniq(array):
     if len(array) == 0:
@@ -82,6 +84,13 @@ def is_int(input):
     except ValueError:
         return False
     return True
+
+r'Dictionary':
+
+    for gladiator in sorted(gladiators, key=lambda x: (-x.total_skill, x.name)):
+        print(f'{gladiator.name}: {gladiator.total_skill} skill')
+        for k, v in sorted(gladiator.technique.items(), key=lambda kvp: "{!s}:{!s}".format(kvp[0], kvp[1]), reverse=True):
+            print(f'- {k} <!> {v}')
 
 r'Objects':
     if __name__ == '__main__':
